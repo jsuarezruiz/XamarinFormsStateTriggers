@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:statetriggers="clr-namespace:XamarinFormsStateTriggers;assembly=XamarinFormsStateTriggers"
+    x:Class="XamarinFormsStateTriggers.Sample.Views.NetworkConnectionStateTriggerView"
+    Title="NetworkConnectionStateTrigger">
+    <ContentPage.Content>
+        <Grid>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup>
+                    <VisualState                               
+                        x:Name="NoConnected">
+                        <VisualState.StateTriggers>
+                            <statetriggers:NetworkConnectionStateTrigger IsConnected="False" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="Red" />
+                            <Setter TargetName="InfoLabel" Property="Label.Text" 
+                                    Value="No Internet connection available" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState
+                        x:Name="Connected">
+                        <VisualState.StateTriggers>
+                            <statetriggers:NetworkConnectionStateTrigger IsConnected="True" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="Green" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Label
+                x:Name="InfoLabel"
+                Text="Connected"
+                HorizontalOptions="Center"
+                VerticalOptions="Center" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

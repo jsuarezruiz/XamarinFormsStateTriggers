@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:statetriggers="clr-namespace:XamarinFormsStateTriggers;assembly=XamarinFormsStateTriggers"
+    x:Class="XamarinFormsStateTriggers.Sample.Views.EnergySaverStatusStateTriggerView"
+    Title="EnergySaverStatusStateTrigger">
+    <ContentPage.Content>
+        <Grid>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup>
+                    <VisualState
+                        x:Name="NotEnergySaverState">
+                        <VisualState.StateTriggers>
+                            <statetriggers:EnergySaverStatusStateTrigger IsEnergySaverStatus="False" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="Green" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState                            
+                        x:Name="EnergySaverState">
+                        <VisualState.StateTriggers>
+                            <statetriggers:EnergySaverStatusStateTrigger IsEnergySaverStatus="True" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="Red" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Label
+                Text="This Grid changes the color based on the device energy saver status where the App is running."
+                HorizontalOptions="Center"
+                VerticalOptions="Center" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Javier Suárez Ruiz</Authors>
+    <PackageTags>xamarin, xamarin.forms, trigger, statetrigger</PackageTags>
+    <PackageProjectUrl>https://github.com/jsuarezruiz/XamarinFormsStateTriggers</PackageProjectUrl>
+    <Description>A collection of custom visual state triggers for Xamarin.Forms</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/jsuarezruiz/XamarinFormsStateTriggers/master/LICENSE</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/jsuarezruiz/XamarinFormsStateTriggers</RepositoryUrl>
+    <Copyright>Javier Suárez Ruiz</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.1" />
+    <PackageReference Include="Xamarin.Forms" Version="4.5.0.356" />
+  </ItemGroup>
+
+</Project>
